@@ -1,110 +1,93 @@
-Forty4 User Management Tool
-A full-stack web application for managing a user database. This dashboard provides complete CRUD (Create, Read, Update, Delete) functionality with a clean, responsive user interface.
+A full-stack web application for managing a user database. This dashboard provides complete CRUD (Create, Read, Update, Delete) functionality with a clean, responsive user interface built with React and a robust Node.js backend.
 
-Live Demo: Frontend Deployed on Render
+Live Frontend Demo: https://user-management-tool-1.onrender.com/
 
-Backend API: Backend Deployed on Render
-
-## Tech Stack
-This project is a monorepo containing a separate frontend and backend application.
-
-Frontend:
-
-Framework: React.js (with Vite)
-
-Routing: React Router
-
-API Communication: Axios
-
-Styling: Plain CSS
-
-Backend:
-
-Framework: Node.js with Express.js
-
-Architecture: 3-Tier (Controller, Service, Repository)
-
-Middleware: cors for handling cross-origin requests
-
-Database:
-
-PostgreSQL hosted on Supabase
-
-Deployment:
-
-Frontend (Static Site) and Backend (Web Service) are deployed on Render.
+Live Backend API: https://user-management-tool-i.onrender.com/
 
 ## Features
 View All Users: A clean, tabular display of all users in the database.
 
 Create Users: An intuitive form to add a new user with name, email, and other details.
 
-Update Users: Edit an existing user's information.
+Update Users: Easily edit an existing user's information.
 
 Delete Users: Remove a user from the database with a confirmation step.
 
 Responsive Design: The UI is functional on both desktop and mobile devices.
 
-## Local Setup and Installation
-To run this project on your local machine, follow these steps.
+## Tech Stack
+This project is a monorepo containing separate frontend and backend applications.
+
+Category	Technology
+Frontend	React.js, Vite, React Router, Axios, CSS
+Backend	Node.js, Express.js
+Database	PostgreSQL (hosted on Supabase)
+Deployment	Render (Static Site for Frontend, Web Service for Backend)
+
+Export to Sheets
+## Getting Started (Local Development)
+To run this project on your local machine, please follow the steps below.
 
 ### Prerequisites
-Node.js (v18.x or later)
-
 Git
 
-### 1. Clone the Repository
+Node.js (v18.x or later)
+
+### Installation & Setup
+Clone the Repository
+
 Bash
 
 git clone https://github.com/Rahulgillella22/user-management--tool.git
-### 2. Backend Setup
-Navigate to the backend directory:
+cd user-management--tool
+Setup the Backend
+
+Navigate to the backend directory and install dependencies.
 
 Bash
 
 cd backend
-Install the dependencies:
+npm install
+Create a .env file by copying the example.
 
 Bash
 
-npm install
-Create a .env file and add your Supabase database URL:
+# (You can just create a new file named .env)
+Add your Supabase database connection string to the .env file.
 
 Code snippet
 
 # /backend/.env
 DATABASE_URL="postgres://user:password@host:port/database"
-Start the backend server:
+Start the backend server.
 
 Bash
 
 npm run dev
-The server will be running at http://localhost:5000.
+The backend will be running at http://localhost:5000.
 
-### 3. Frontend Setup
-Open a new terminal and navigate to the frontend directory:
+Setup the Frontend
+
+Open a new terminal and navigate to the frontend directory.
 
 Bash
 
 cd frontend
-Install the dependencies:
-
-Bash
-
 npm install
-Create a .env.development file to point to your local backend:
+Create a .env.development file for local development variables.
 
 Code snippet
 
 # /frontend/.env.development
 VITE_API_BASE_URL=http://localhost:5000/api/v1
-Start the frontend development server:
+Start the frontend development server.
 
 Bash
 
 npm run dev
+The application will be available at http://localhost:5173 (or the port shown in the terminal).
 
-## API Endpoints
+## API Reference
 The backend provides the following RESTful API endpoints:
 
 Method	Path	Description
@@ -113,5 +96,3 @@ GET	/api/v1/users/:id	Fetches a single user by their ID.
 POST	/api/v1/users	Creates a new user.
 PUT	/api/v1/users/:id	Updates an existing user's details.
 DELETE	/api/v1/users/:id	Deletes a user by their ID.
-
-
